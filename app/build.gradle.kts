@@ -46,6 +46,18 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    //swipe
+    implementation(libs.androidx.swiperefreshlayout)
+
+    //Glide
+    implementation(libs.glide)
+
+    //retrofit
+    implementation(libs.retrofit)
+
+    //Gson
+    implementation(libs.converter.gson)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
