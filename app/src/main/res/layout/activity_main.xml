@@ -26,7 +26,7 @@
         android:id="@+id/tvNoData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sin datos intente de nuevo"
+        android:text="@string/without_data"
         android:textAppearance="?attr/textAppearanceLabelLarge"
         android:gravity="center"
         android:visibility="gone"

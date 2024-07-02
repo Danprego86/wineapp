@@ -1,6 +1,7 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    id(libs.plugins.androidApplication.get().pluginId)
+    id(libs.plugins.jetbrainsKotlinAndroid.get().pluginId)
+    id(libs.plugins.ksp.get().pluginId)
 }
 
 android {
@@ -51,12 +52,14 @@ dependencies {
 
     //Glide
     implementation(libs.glide)
+    implementation(libs.ksp)
 
     //retrofit
     implementation(libs.retrofit)
 
     //Gson
     implementation(libs.converter.gson)
+    implementation(libs.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
