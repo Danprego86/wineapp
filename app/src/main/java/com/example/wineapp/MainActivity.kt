@@ -76,19 +76,19 @@ class MainActivity : AppCompatActivity(), OnclickListener {
 
             try {
                 // val wines = getLocalWines()
-                val serverOk = Random.nextBoolean()
-                val wines =  if (serverOk)service.getRedWines() else listOf()
+                //val serverOk = Random.nextBoolean()
+                val wines =  service.getRedWines()//if (serverOk) else listOf()
 
                 //Se cambia la ubicacion de muestra ya que el main si esta optimizado en cambios al usuario
                 withContext(Dispatchers.Main) {
-                    if (wines.isEmpty()) {
-                        showRecyclerView(true)
-                        showDataView(false)
+//                    if (wines.isEmpty()) {
+////                        showRecyclerView(true)
+////                        showDataView(false)
                         adapter.submitList(wines)
-                    } else {
-                        showRecyclerView(false)
-                        showDataView(true)
-                    }
+//                    } else {
+////                        showRecyclerView(false)
+////                        showDataView(true)
+//                    }
                 }
             } catch (e: Exception) {
                 Log.d("TAG-1", e.toString())
@@ -155,6 +155,18 @@ class MainActivity : AppCompatActivity(), OnclickListener {
 
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.dialog_add_fav_title)
+            .setItems(options){_,index ->
+
+                when(index){
+                    0->{
+                        addToFavorite(wine)
+                    }
+                }
+            }
             .show()
+    }
+
+    private fun addToFavorite(wine: Wine) {
+        showMessage(R.string.room_save_success)
     }
 }
